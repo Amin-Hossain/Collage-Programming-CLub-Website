@@ -1,0 +1,308 @@
+
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CSE CLUB – Official Structure</title>
+  <meta name="description" content="SBPGC CSE CLUB – Full Structure, Teams, Activities & Online Presence" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b1220;
+      --card: #111b2d;
+      --muted: #9db0cc;
+      --text: #e8f0ff;
+      --brand: #6aa6ff;
+      --accent: #7af0d6;
+      --ring: #3658ff44;
+      --border: #24324a;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1200px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#f6f8fc; --card:#ffffff; --text:#0b1220; --muted:#516079; --border:#e6eaf2; --ring:#3658ff22; }
+      body{ background-image: radial-gradient(600px 200px at 10% 0%, #eaf1ff 0%, transparent 50%), radial-gradient(600px 200px at 90% 0%, #eefaf6 0%, transparent 50%); }
+    }
+    *{ box-sizing: border-box }
+    html,body{ height:100% }
+    body{
+      margin:0; font-family: 'Inter','Noto Sans Bengali',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Noto Sans",sans-serif;
+      color:var(--text); background:var(--bg);
+      line-height:1.6; letter-spacing:.2px;
+      background-image: radial-gradient(800px 300px at 50% -10%, #11203d 0%, transparent 55%);
+    }
+    a{ color:var(--brand); text-decoration:none }
+    a:hover{ text-decoration:underline }
+
+    /* Layout */
+    .container{ width:100%; max-width:var(--max); margin-inline:auto; padding-inline:clamp(16px,3vw,28px); }
+    header{
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: saturate(1.2) blur(8px);
+      background: color-mix(in oklab, var(--bg) 80%, transparent);
+      border-bottom:1px solid var(--border);
+    }
+    .nav{ display:flex; align-items:center; gap:18px; padding:14px 0; }
+    .brand{ display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.5px; }
+    .logo{ width:36px; height:36px; border-radius:12px; display:grid; place-items:center; font-weight:800; color:#06122b; background:linear-gradient(135deg,var(--brand),var(--accent)); box-shadow:var(--shadow) }
+    .spacer{ flex:1 }
+    .nav a{ padding:8px 12px; border-radius:12px; color:var(--muted); border:1px solid transparent }
+    .nav a:hover{ color:var(--text); border-color:var(--border); background: color-mix(in oklab, var(--card) 70%, transparent) }
+
+    /* Hero */
+    .hero{ padding: clamp(28px, 6vw, 64px) 0; }
+    .hero .wrap{ display:grid; gap:18px; grid-template-columns: 1.2fr .8fr; align-items:center; }
+    @media (max-width: 900px){ .hero .wrap{ grid-template-columns: 1fr; } }
+    h1{ font-size: clamp(28px, 4.6vw, 52px); line-height:1.15; margin:0; letter-spacing:.4px }
+    .lead{ color:var(--muted); font-size: clamp(14px, 1.6vw, 18px); }
+    .chips{ display:flex; gap:10px; flex-wrap:wrap; margin-top:6px }
+    .chip{ padding:6px 10px; border:1px solid var(--border); border-radius:999px; color:var(--muted); background: color-mix(in oklab, var(--card) 70%, transparent) }
+    .hero-card{ background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow) }
+
+
+    section{ padding: 26px 0 10px }
+    .section-title{ font-size: clamp(20px, 2.6vw, 32px); margin: 12px 0 6px }
+    .muted{ color:var(--muted) }
+
+
+    .grid{ display:grid; gap:16px; grid-template-columns: repeat(12, 1fr) }
+    .col-3{ grid-column: span 3 }
+    .col-4{ grid-column: span 4 }
+    .col-6{ grid-column: span 6 }
+    .col-12{ grid-column: span 12 }
+    @media (max-width: 1100px){ .col-6{ grid-column: span 12 } .col-4{ grid-column: span 6 } .col-3{ grid-column: span 6 } }
+    @media (max-width: 620px){ .col-3,.col-4{ grid-column: span 12 } }
+
+    .card{
+      background: var(--card); border:1px solid var(--border); border-radius: var(--radius);
+      padding:18px; box-shadow: var(--shadow);
+    }
+    .card h3{ margin:4px 0 10px; font-size: clamp(16px, 1.8vw, 20px) }
+    .tag{ display:inline-flex; align-items:center; gap:8px; border:1px solid var(--border); padding:6px 10px; border-radius:10px; color:var(--muted); background: color-mix(in oklab, var(--card) 70%, transparent) }
+
+
+    ul.clean{ list-style:none; padding:0; margin:6px 0 0 }
+    ul.clean li{ padding:8px 10px; border:1px solid var(--border); border-radius:12px; margin-top:8px; background:linear-gradient(180deg, color-mix(in oklab, var(--card) 80%, transparent), color-mix(in oklab, var(--card) 90%, transparent)); }
+
+
+    details{ border:1px solid var(--border); border-radius:14px; padding:10px 12px; background:var(--card) }
+    details + details{ margin-top:10px }
+    summary{ cursor:pointer; list-style:none; display:flex; align-items:center; justify-content:space-between; gap:12px; font-weight:700 }
+    summary::-webkit-details-marker{ display:none }
+    .hint{ color:var(--muted); font-weight:500; font-size: 13px }
+
+
+    .pill{ display:inline-block; padding:4px 10px; border-radius:999px; background: color-mix(in oklab, var(--brand) 30%, transparent); color:#06122b; font-weight:700 }
+
+
+    footer{ border-top:1px solid var(--border); margin-top:28px; padding:18px 0; color:var(--muted); }
+
+
+    @media print{
+      header, .hero .wrap > div:last-child, .chips, .hint{ display:none !important }
+      body{ background:#fff; color:#000 }
+      .card{ break-inside: avoid }
+      a{ color:#000; text-decoration:none }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">A</div>
+        <div>CSE CLUB <span class="pill">Official</span></div>
+      </div>
+      <div class="spacer"></div>
+      <nav class="links">
+        <a href="#exec">Executive</a>
+        <a href="#core">Core Teams</a>
+        <a href="#members">Members</a>
+        <a href="#activities">Activities</a>
+        <a href="#online">Online</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="wrap">
+        <div>
+          <h1>🏛 CSE CLUB – Full Structure</h1>
+          <p class="lead">ক্লাবের সম্পূর্ণ গঠন–তন্ত্র, দায়িত্ব ও কার্যক্রম এক পাতায়। <span class="hint">(Responsive • Print‑ready • No JS)</span></p>
+          <div class="chips">
+            <span class="chip">Leadership Panel</span>
+            <span class="chip">Technical & Creative</span>
+            <span class="chip">Events & PR</span>
+            <span class="chip">Research & HR</span>
+          </div>
+        </div>
+        <div class="hero-card">
+          <strong>কুইক ন্যাভ</strong>
+          <ul class="clean">
+            <li><a href="#exec">1) Executive Committee</a></li>
+            <li><a href="#core">2) Core Teams & Departments</a></li>
+            <li><a href="#members">3) General Members</a></li>
+            <li><a href="#activities">4) Activities</a></li>
+            <li><a href="#online">5) Documentation & Online Presence</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="exec">
+      <h2 class="section-title">1) Executive Committee (Leadership Panel)</h2>
+      <p class="muted">👉 ক্লাবকে পরিচালনা করে।</p>
+      <div class="grid">
+        <div class="card col-3"><h3>President</h3><p class="muted">সভাপতি</p></div>
+        <div class="card col-3"><h3>Vice President</h3><p class="muted">সহ‑সভাপতি</p></div>
+        <div class="card col-3"><h3>General Secretary</h3><p class="muted">সাধারণ সম্পাদক</p></div>
+        <div class="card col-3"><h3>Joint Secretary</h3><p class="muted">সহ সম্পাদক</p></div>
+        <div class="card col-3"><h3>Treasurer</h3><p class="muted">অর্থ সম্পাদক</p></div>
+        <div class="card col-3"><h3>Organizing Secretary</h3></div>
+        <div class="card col-3"><h3>Advisors</h3><p class="muted">Faculty Members / Senior Teachers</p></div>
+      </div>
+    </section>
+
+
+    <section id="core">
+      <h2 class="section-title">2) Core Teams & Departments</h2>
+      <p class="muted">👉 প্রতিটি টিমের আলাদা দায়িত্ব থাকবে।</p>
+
+      <div class="grid">
+        <div class="col-6">
+          <details open class="card">
+            <summary>🧠 Technical Team <span class="hint">(Programming, Dev, Security, Robotics, AI)</span></summary>
+            <ul class="clean">
+              <li>Programming & Problem Solving Wing</li>
+              <li>Web & App Development Wing</li>
+              <li>Cyber Security & Ethical Hacking Wing</li>
+              <li>Robotics & IoT Wing</li>
+              <li>AI & Machine Learning Research Wing</li>
+            </ul>
+          </details>
+        </div>
+        <div class="col-6">
+          <details open class="card">
+            <summary>🎨 Creative Team</summary>
+            <ul class="clean">
+              <li>Graphics Design Unit</li>
+              <li>Content Writing & Documentation Unit</li>
+              <li>Multimedia & Video Editing Unit</li>
+            </ul>
+          </details>
+        </div>
+
+        <div class="col-6">
+          <details class="card">
+            <summary>🎪 Event Management Team</summary>
+            <ul class="clean">
+              <li>Workshop & Seminar Unit</li>
+              <li>Contest & Hackathon Organizer</li>
+              <li>Logistic & Stage Management</li>
+            </ul>
+          </details>
+        </div>
+        <div class="col-6">
+          <details class="card">
+            <summary>📣 Communication & Media Team</summary>
+            <ul class="clean">
+              <li>Public Relations (PR) Unit</li>
+              <li>Social Media Management</li>
+              <li>Photography & Videography Unit</li>
+            </ul>
+          </details>
+        </div>
+
+        <div class="col-6">
+          <details class="card">
+            <summary>📚 Academic & Research Team</summary>
+            <ul class="clean">
+              <li>Study Circle / Group Discussion</li>
+              <li>Research & Publication</li>
+              <li>Journal / Blog Management</li>
+            </ul>
+          </details>
+        </div>
+        <div class="col-6">
+          <details class="card">
+            <summary>👥 Membership & HR Team</summary>
+            <ul class="clean">
+              <li>Member Recruitment & Registration</li>
+              <li>Training & Mentorship</li>
+              <li>Alumni Relations</li>
+            </ul>
+          </details>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="members">
+      <h2 class="section-title">3) General Members</h2>
+      <p class="muted">👉 ক্লাবের মূল শক্তি।</p>
+      <div class="card">
+        <div class="chips">
+          <span class="chip">Active Members</span>
+          <span class="chip">Volunteer Members</span>
+          <span class="chip">Alumni Members</span>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="activities">
+      <h2 class="section-title">4) Activities of CSE CLUB</h2>
+      <div class="grid">
+        <div class="card col-4"><h3>✔ Programming Contests</h3><p class="muted">(Intra & Inter‑University)</p></div>
+        <div class="card col-4"><h3>✔ Hackathons & Project Showcasing</h3></div>
+        <div class="card col-4"><h3>✔ Workshops</h3><p class="muted">Web, App, AI, Cybersecurity</p></div>
+        <div class="card col-4"><h3>✔ Seminars & Tech Talks</h3></div>
+        <div class="card col-4"><h3>✔ Study Circles & Peer Learning</h3></div>
+        <div class="card col-4"><h3>✔ Industrial Tours / Tech Fest</h3></div>
+        <div class="card col-12"><h3>✔ Social Contribution</h3><p class="muted">School Programming Campaign, IT Awareness Program</p></div>
+      </div>
+    </section>
+
+
+    <section id="online">
+      <h2 class="section-title">5) Documentation & Online Presence</h2>
+      <div class="grid">
+        <div class="card col-4">
+          <h3>🌐 Official Website</h3>
+          <p class="muted">ইভেন্ট, ব্লগ, রিসোর্স—সব এক জায়গায়।</p>
+        </div>
+        <div class="card col-4">
+          <h3>📘 Facebook Page / Group</h3>
+          <p class="muted">ঘোষণা, কমিউনিটি আপডেট।</p>
+        </div>
+        <div class="card col-4">
+          <h3>▶️ YouTube Channel</h3>
+          <p class="muted">ওয়ার্কশপ/টকের রেকর্ডিং ও টিউটোরিয়াল।</p>
+        </div>
+        <div class="card col-4">
+          <h3>📰 Newsletter / Magazine</h3>
+          <p class="muted">মাসিক সারাংশ, রিসার্চ হাইলাইট।</p>
+        </div>
+        <div class="card col-4">
+          <h3>🐙 GitHub Organization</h3>
+          <p class="muted">Open‑source প্রোজেক্ট ও টেমপ্লেট।</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="container">
+      © <span id="y"></span> SBPGC CSE CLUB · Crafted By Abidul Hasan Amin ❤️
+    </footer>
+  </main>
+
+  <script>
+    // small: current year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
